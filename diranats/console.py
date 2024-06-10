@@ -20,7 +20,6 @@ def set_webhook_telegram():
     # Копирование файла
     destination_file = os.path.join(destination_dir, os.path.basename(source_file))
     shutil.copy(source_file, destination_file)
-    print('end')
 
 def get_module_path(module_name):
     """Получить путь к файлу модуля."""

@@ -6,12 +6,12 @@ authors = ["drabbit <d@rabbit.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+diracore = "*"
+dira = "*"
+nats-py = "^2.7"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
-nats-py = "^2.7"
-diracore = "*"
-dira = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

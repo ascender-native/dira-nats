@@ -11,11 +11,12 @@ class NatsServiceProvider(ServiceProvider):
     
     # Composite service provider to register all necessary components for the bot
     async def register(self):
-        self.register_console()
+        if isinstance(self.kernel, ConsoleKernel):
+            self.register_console()
+
         self.publish({'diranats.config.nats': 'config.nats'}, 'config')
         
     
     def register_console(self):
-        if isinstance(self.kernel, ConsoleKernel):
-            # Load the console module into the kernel
-            self.kernel.load('diranats.console')
+        # Load the console module into the kernel
+        self.kernel.load('diranats.console')
